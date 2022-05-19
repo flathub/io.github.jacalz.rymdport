@@ -2,6 +2,8 @@
 
 This repository contains the official Flatpak package for [Rymdport](https://github.com/Jacalz/rymdport).
 
+<a href='https://flathub.org/apps/details/io.github.jacalz.rymdport'><img width='200' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+
 ## Installing
 
 To install Rymdport, use the following commands:
