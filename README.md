@@ -6,7 +6,7 @@ This repository contains the official Flatpak package for [Rymdport](https://git
 
 ## Installing
 
-To install Rymdport, use the following commands:
+Rymdport is available for both `aarch64` and `x86_64`. Use the following commands to install:
 ```
 flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub io.github.jacalz.rymdport
