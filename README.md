@@ -14,4 +14,4 @@ flatpak install flathub io.github.jacalz.rymdport
 
 ## Issues
 
-Only issues specific to the Flathub package should be reported in this repository. Any other issues should be reported at https://github.com/Jacalz/rymdport/issues. 
+Only issues specific to the Flathub package should be reported in this repository. Any other issues should be reported at https://github.com/Jacalz/rymdport/issues.
