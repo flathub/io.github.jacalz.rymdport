@@ -35,7 +35,7 @@ flatpak install flathub org.freedesktop.Platform//22.08 org.freedesktop.Sdk//22.
 
 The next step is to build and install the package:
 ```
-flatpak-builder --user --install --force-clean build-dir io.github.jacalz.rymdport
+flatpak-builder --user --install --force-clean build-dir io.github.jacalz.rymdport.yml
 ```
 
 Lastly, the built application can be started by running:
