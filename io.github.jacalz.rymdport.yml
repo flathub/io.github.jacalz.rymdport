@@ -44,5 +44,5 @@ modules:
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
       sources:
         - type: archive
-          url: "https://github.com/Jacalz/rymdport/releases/download/v3.3.0/rymdport-v3.3.0-vendored.tar.xz"
-          sha256: 9d35347d80e84a535c31f3951476ba3e44c11978c830e2fdda3a3dbac34b7989
+          url: "https://github.com/Jacalz/rymdport/releases/download/v3.3.2/rymdport-v3.3.2-vendored.tar.xz"
+          sha256: ee1280493220376f7d086ac83a8a7b0fe174842bbf626593142e2ff8babc9667
