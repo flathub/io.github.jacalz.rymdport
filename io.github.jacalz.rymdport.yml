@@ -36,7 +36,7 @@ modules:
     - name: rymdport
       buildsystem: simple
       build-commands:
-        - $GOROOT/bin/go build -trimpath -ldflags="-s -w" -o rymdport
+        - $GOROOT/bin/go build -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
         - install -Dm00755 rymdport $FLATPAK_DEST/bin/rymdport
         - install -Dm00644 internal/assets/icon/icon-512.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/$FLATPAK_ID.png
         - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.png
