@@ -1,6 +1,6 @@
 app-id: io.github.jacalz.rymdport
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
     - org.freedesktop.Sdk.Extension.golang
@@ -36,7 +36,7 @@ modules:
     - name: rymdport
       buildsystem: simple
       build-commands:
-        - $GOROOT/bin/go build -ldflags="-s -w" -o rymdport
+        - $GOROOT/bin/go build -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
         - install -Dm00755 rymdport $FLATPAK_DEST/bin/rymdport
         - install -Dm00644 internal/assets/icon/icon-512.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/$FLATPAK_ID.png
         - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.png
@@ -44,5 +44,5 @@ modules:
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
       sources:
         - type: archive
-          url: "https://github.com/Jacalz/rymdport/releases/download/v3.3.0/rymdport-v3.3.0-vendored.tar.xz"
-          sha256: 9d35347d80e84a535c31f3951476ba3e44c11978c830e2fdda3a3dbac34b7989
+          url: "https://github.com/Jacalz/rymdport/releases/download/v3.4.0-rc1/rymdport-v3.4.0-rc1-vendored.tar.xz"
+          sha256: 9087de20d74f8fa4e4072a775020b0c5f59241f047e6ae3772d182d5bc952e96
