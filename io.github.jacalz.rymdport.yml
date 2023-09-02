@@ -38,11 +38,18 @@ modules:
       build-commands:
         - $GOROOT/bin/go build -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
         - install -Dm00755 rymdport $FLATPAK_DEST/bin/rymdport
-        - install -Dm00644 internal/assets/icon/icon-512.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.png
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
+        - install -Dm00644 internal/assets/icons/icon-512.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/icons/icon-256.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/icons/icon-128.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/icons/icon-64.png $FLATPAK_DEST/share/icons/hicolor/64x64/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/icons/icon-48.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/icons/icon-32.png $FLATPAK_DEST/share/icons/hicolor/32x32/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/icons/icon-24.png $FLATPAK_DEST/share/icons/hicolor/24x24/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/icons/icon-16.png $FLATPAK_DEST/share/icons/hicolor/16x16/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.png
       sources:
         - type: archive
-          url: "https://github.com/Jacalz/rymdport/releases/download/v3.4.0/rymdport-v3.4.0-vendored.tar.xz"
-          sha256: fa04f4c965532dafacfd4305c0a0032e7fbfc4949271bcc7e31deeef26acbdaa
+          url: "https://github.com/Jacalz/rymdport/releases/download/v3.5.0/rymdport-v3.5.0-vendored.tar.xz"
+          sha256: 5d6b62964987a6acefa84be5ca02d0303d86f0e812a86a6622d3c56a86d9c43f
