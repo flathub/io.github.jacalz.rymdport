@@ -20,12 +20,8 @@ finish-args:
     - --talk-name=org.freedesktop.Notifications
 
     # Support only the most common directories.
-    - --filesystem=xdg-desktop
-    - --filesystem=xdg-documents
+    - --filesystem=home:ro
     - --filesystem=xdg-download
-    - --filesystem=xdg-music
-    - --filesystem=xdg-pictures
-    - --filesystem=xdg-videos
 
 build-options:
   env:
