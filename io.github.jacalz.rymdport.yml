@@ -48,4 +48,4 @@ modules:
       sources:
         - type: archive
           url: "https://github.com/Jacalz/rymdport/releases/download/v3.5.1/rymdport-v3.5.1-vendored.tar.xz"
-          sha256: 08495b45f2898b9d1da570e684e2c8e048fb8a72fd9562393a692eb128961213
+          sha512: fa0cf1ed6931834b31006f8cc143f6fcd7ed3d77435992f7eff30aa92be3388051cf2e325509d08d36d369cd23bce99167405ef05658b368c96d3effff05be1c
