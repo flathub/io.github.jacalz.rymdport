@@ -48,5 +48,5 @@ modules:
         - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.png
       sources:
         - type: archive
-          url: "https://github.com/Jacalz/rymdport/releases/download/v3.5.3/rymdport-v3.5.3-vendored.tar.xz"
-          sha512: dfec7b2ebbcdec8338cd9f30c0a50b1fd03db2b4d24ab5f126b37f7a22a66ce86327d4d63ea81b000b23ca39a59ed0284eb8ce511de6deae4757fa443ab1984a
+          url: "https://github.com/Jacalz/rymdport/releases/download/v3.6.0/rymdport-v3.6.0-vendored.tar.xz"
+          sha512: fd72024fa83c217317ff5dcf37203f43df0189b697b80e76d299527ed41c52017993c96bb58dbc712752ebe1103fd891ad5e601e688b08fa42723905c890e09a
