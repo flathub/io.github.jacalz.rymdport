@@ -47,7 +47,7 @@ Building the package locally requires `flatpak-builder` to be installed. Install
 
 Assuming that flathub already is added as a remote, the required SDKs have to be downloaded:
 ```
-flatpak install flathub org.freedesktop.Platform//23.08 org.freedesktop.Sdk//23.08 org.freedesktop.Sdk.Extension.golang//23.08
+flatpak install flathub org.freedesktop.Platform//24.08 org.freedesktop.Sdk//24.08 org.freedesktop.Sdk.Extension.golang//24.08
 ```
 
 The next step is to build and install the package:

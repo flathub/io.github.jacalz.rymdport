@@ -1,6 +1,6 @@
 app-id: io.github.jacalz.rymdport
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
     - org.freedesktop.Sdk.Extension.golang
@@ -45,8 +45,8 @@ modules:
         - install -Dm00644 internal/assets/icons/icon-32.png $FLATPAK_DEST/share/icons/hicolor/32x32/apps/$FLATPAK_ID.png
         - install -Dm00644 internal/assets/icons/icon-24.png $FLATPAK_DEST/share/icons/hicolor/24x24/apps/$FLATPAK_ID.png
         - install -Dm00644 internal/assets/icons/icon-16.png $FLATPAK_DEST/share/icons/hicolor/16x16/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
       sources:
         - type: archive
-          url: "https://github.com/Jacalz/rymdport/releases/download/v3.6.0/rymdport-v3.6.0-vendored.tar.xz"
-          sha512: fd72024fa83c217317ff5dcf37203f43df0189b697b80e76d299527ed41c52017993c96bb58dbc712752ebe1103fd891ad5e601e688b08fa42723905c890e09a
+          url: "https://github.com/Jacalz/rymdport/releases/download/v3.7.0/rymdport-v3.7.0-vendored.tar.xz"
+          sha512: 8cd7c0a3b93f0f8271561db323312fededfd9d721c6f97c54947d589fc2a050f21251d2d4f196127366c26af75f20eb4324a01b51a13d7ec81385a8857f2ee64
