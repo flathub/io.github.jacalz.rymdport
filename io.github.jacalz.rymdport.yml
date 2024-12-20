@@ -45,7 +45,7 @@ modules:
         - install -Dm00644 internal/assets/icons/icon-32.png $FLATPAK_DEST/share/icons/hicolor/32x32/apps/$FLATPAK_ID.png
         - install -Dm00644 internal/assets/icons/icon-24.png $FLATPAK_DEST/share/icons/hicolor/24x24/apps/$FLATPAK_ID.png
         - install -Dm00644 internal/assets/icons/icon-16.png $FLATPAK_DEST/share/icons/hicolor/16x16/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.png
+        - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
       sources:
         - type: archive
           url: "https://github.com/Jacalz/rymdport/releases/download/v3.7.0/rymdport-v3.7.0-vendored.tar.xz"
