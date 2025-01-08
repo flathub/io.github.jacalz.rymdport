@@ -33,7 +33,7 @@ modules:
     - name: rymdport
       buildsystem: simple
       build-commands:
-        - $GOROOT/bin/go build -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
+        - $GOROOT/bin/go build -tags="no_emoji,no_metadata" -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
         - install -Dm00755 rymdport $FLATPAK_DEST/bin/rymdport
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
