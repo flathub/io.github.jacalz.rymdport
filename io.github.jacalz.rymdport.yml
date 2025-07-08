@@ -16,14 +16,6 @@ finish-args:
     #- --socket=fallback-x11 # Only create the x11 socket if wayland isn't avaliable.
     #- --socket=wayland
 
-    # Needed to support desktop notifications.
-    - --talk-name=org.freedesktop.Notifications
-
-    # Support only the most common directories.
-    - --filesystem=home:ro
-    - --filesystem=xdg-download
-    - --filesystem=/tmp # Fix https://github.com/Jacalz/rymdport/issues/93.
-
 build-options:
   env:
     - GOBIN=/app/bin
@@ -33,7 +25,7 @@ modules:
     - name: rymdport
       buildsystem: simple
       build-commands:
-        - $GOROOT/bin/go build -tags="no_emoji,no_metadata" -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
+        - $GOROOT/bin/go build -tags="no_emoji,no_metadata,flatpak" -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
         - install -Dm00755 rymdport $FLATPAK_DEST/bin/rymdport
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
         - install -Dm00644 internal/assets/unix/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
@@ -48,5 +40,5 @@ modules:
         - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
       sources:
         - type: archive
-          url: "https://github.com/Jacalz/rymdport/releases/download/v3.8.0/rymdport-v3.8.0-vendored.tar.xz"
-          sha512: fce034e6b3f7da5d4194ca1b2e12028b9edc96062de7f0a01fc5669e9de89aed88a5bfc4e3133a48b3a6adf5c6067b04e3753269940fae30f6156eebb2cc621a
+          url: "https://github.com/Jacalz/rymdport/releases/download/v3.9.0/rymdport-v3.9.0-vendored.tar.xz"
+          sha512: c6359b235dd6a353a23433f2a4da8f9aa29e99d29a5eaca7f7df3387bce5e31a19079668b3f93c02f33ebc54d3e1fed897d89ab42d04636194c22148d1b7b675
