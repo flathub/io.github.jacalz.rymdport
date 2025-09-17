@@ -1,44 +1,47 @@
 app-id: io.github.jacalz.rymdport
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-    - org.freedesktop.Sdk.Extension.golang
+  - org.freedesktop.Sdk.Extension.golang
+  - org.freedesktop.Sdk.Extension.llvm21
 command: rymdport
 
 finish-args:
-    - --share=ipc # Share IPC namespace with the host (necessary for X11).
-    - --share=network
-    - --socket=x11
-    - --device=dri # OpenGL rendering support.
+  - --share=ipc # Share IPC namespace with the host (necessary for X11).
+  - --share=network
+  - --socket=x11
+  - --device=dri # OpenGL rendering support.
 
-    # The below are commented out until there is out of the box support for wayland.
-    #- --socket=fallback-x11 # Only create the x11 socket if wayland isn't avaliable.
-    #- --socket=wayland
+  # The below are commented out until there is out of the box support for wayland.
+  #- --socket=fallback-x11 # Only create the x11 socket if wayland isn't avaliable.
+  #- --socket=wayland
 
 build-options:
+  append-path: /usr/lib/sdk/llvm21/bin
+  prepend-ld-library-path: /usr/lib/sdk/llvm21/lib
   env:
-    - GOBIN=/app/bin
-    - GOROOT=/usr/lib/sdk/golang
+    - CC=clang
+    - CGO_LDFLAGS=-fuse-ld=lld
 
 modules:
-    - name: rymdport
-      buildsystem: simple
-      build-commands:
-        - $GOROOT/bin/go build -tags="no_emoji,no_metadata,flatpak,migrated_fynedo" -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
-        - install -Dm00755 rymdport $FLATPAK_DEST/bin/rymdport
-        - install -Dm00644 internal/assets/unix/$FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
-        - install -Dm00644 internal/assets/unix/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
-        - install -Dm00644 internal/assets/icons/icon-512.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/icons/icon-256.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/icons/icon-128.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/icons/icon-64.png $FLATPAK_DEST/share/icons/hicolor/64x64/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/icons/icon-48.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/icons/icon-32.png $FLATPAK_DEST/share/icons/hicolor/32x32/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/icons/icon-24.png $FLATPAK_DEST/share/icons/hicolor/24x24/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/icons/icon-16.png $FLATPAK_DEST/share/icons/hicolor/16x16/apps/$FLATPAK_ID.png
-        - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
-      sources:
-        - type: archive
-          url: "https://github.com/Jacalz/rymdport/releases/download/v3.9.0/rymdport-v3.9.0-vendored.tar.xz"
-          sha512: c6359b235dd6a353a23433f2a4da8f9aa29e99d29a5eaca7f7df3387bce5e31a19079668b3f93c02f33ebc54d3e1fed897d89ab42d04636194c22148d1b7b675
+  - name: rymdport
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/golang/bin/go build -tags="no_emoji,no_metadata,flatpak,migrated_fynedo" -trimpath -buildvcs=false -ldflags="-s -w" -o rymdport
+      - install -Dm00755 rymdport $FLATPAK_DEST/bin/rymdport
+      - install -Dm00644 internal/assets/unix/$FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
+      - install -Dm00644 internal/assets/unix/$FLATPAK_ID.appdata.xml $FLATPAK_DEST/share/appdata/$FLATPAK_ID.appdata.xml
+      - install -Dm00644 internal/assets/icons/icon-512.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/icons/icon-256.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/icons/icon-128.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/icons/icon-64.png $FLATPAK_DEST/share/icons/hicolor/64x64/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/icons/icon-48.png $FLATPAK_DEST/share/icons/hicolor/48x48/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/icons/icon-32.png $FLATPAK_DEST/share/icons/hicolor/32x32/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/icons/icon-24.png $FLATPAK_DEST/share/icons/hicolor/24x24/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/icons/icon-16.png $FLATPAK_DEST/share/icons/hicolor/16x16/apps/$FLATPAK_ID.png
+      - install -Dm00644 internal/assets/svg/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
+    sources:
+      - type: archive
+        url: "https://github.com/Jacalz/rymdport/releases/download/v3.9.0/rymdport-v3.9.0-vendored.tar.xz"
+        sha512: c6359b235dd6a353a23433f2a4da8f9aa29e99d29a5eaca7f7df3387bce5e31a19079668b3f93c02f33ebc54d3e1fed897d89ab42d04636194c22148d1b7b675
